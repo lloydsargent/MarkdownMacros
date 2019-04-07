@@ -13,13 +13,11 @@
  * 
  *          Markdown Macros solves this problem by implement macro substitution.
  *          Just before the page is rendered to HTML, Markdown Macros substitutes
- *          it's user defined text. For example:
- * 
- *              [img] 
+ *          it's user defined text. 
  * 
  * @author  Lloyd Sargent
  * @link    
- * @link    http://picocms.org
+ * @link    https://github.com/lloydsargent/MarkdownMacros
  * @license http://opensource.org/licenses/MIT The MIT License
  * 
  * Hours having written php code, maybe 4 hours. Heh.
