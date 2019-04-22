@@ -11,7 +11,7 @@ Assuming that all my paths were correct and I had a cute baby squirrel image, th
 
     (Cute Baby Squirrel)[assets/cutebabysquirrel.png] {.small}
 
-Okay, cool! But, what if you wanted to add the ability to tap on it and zoom the image? That requires an `onmousedown` and you just will no way to implement that without getting seriously ugly.
+Okay, cool! But, what if you wanted to add the ability to tap on it and zoom the image? That requires an `onmousedown` and you find that there is just no way to implement that without getting seriously ugly. It either requires putting in HTML or Javascript (this is the hacky way to do it).
 
 That's where macros come in. Let us assume I rewrite this as follows:
 
@@ -51,11 +51,29 @@ Step 5: Start using the macros!
 
 Any time you feel like putting HTML into your Markdown file to get something to work like it should, resort instead to MarkdownMacros.
 
+## Limitations?
+
+Yes. They are by no means perfect. If you will notice the macro I wrote above assumes text will immediately follow the macro. This kind of jams everything up together. You could change it to the following:
+
+```
+mymacros_macros:
+    '[img_url]':    '<figure id="myImg" onmousedown="zoomImageClick(this)"><img src='
+    '[img_text]':   '><figcaption>'
+    '[/img]':       '</figcaption></figure>'
+```
+Now this has the **slight** advantage that you can add spacing to your macro, but at the expense of remembering to put quotes in it:
+
+```
+[img_url] "assets/cutebabysquirrel.png" [img_text] Cute Baby Squirrel [/img]
+```
+
+This is stylistic and depends on what you are attempting to accomplish.
+
 ## Aren't they inefficient?
 
 They are less efficient than writing HTML, if that is what you mean. Computers, however, are SUPPOSED to eliminate drudgery. The macros do exactly that.
 
-## Can I write HTML and still use the MarkdownMacrosf
+## Can I write HTML and still use the MarkdownMacros?
 
 Yes.
 
@@ -65,4 +83,4 @@ Depends. If you type `[img_url]` a lot for no reason, yes. But the same can be s
 
 ## Why do you do this?
 
-It's either this or playing Final Fantasy 14. Which, I think it is time to play...
+It's either this or playing Final Fantasy 14. Speaking of which, I think it is time to play...
